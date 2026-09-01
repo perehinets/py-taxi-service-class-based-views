@@ -16,7 +16,7 @@ def index(request):
     return render(request, "taxi/index.html", context=context)
 
 
-class ManufactureListView(generic.ListView):
+class ManufacturerListView(generic.ListView):
     model = Manufacturer
     queryset = Manufacturer.objects.all()
     paginate_by = 5
