@@ -19,8 +19,4 @@ from django.urls import path, include
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("taxi.urls", namespace="taxi")),
-    path("__debug__/", include(
-        "debug_toolbar.urls",
-        namespace="debug_toolbar"
-    )),
 ]
