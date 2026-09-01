@@ -1,14 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Driver list</h1>
-  {% if driver_list %}
-    <ul>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if driver_list %}
       {% for driver in driver_list %}
-        <li>
-        <a href="{{ driver.get_absolute_url }}">{{ driver.first_name }} {{ driver.last_name }}</a>
-        </li>
+        <tr>
+          <th><a href="{{ driver.get_absolute_url }}">{{ driver.id }}</a></th>
+          <td>{{ driver.first_name }} {{ driver.last_name }}</td>
+        </tr>
       {% endfor %}
-    </ul>
-  {% endif %}
+    {% endif %}
+    </tbody>
+  </table>
 {% endblock %}
